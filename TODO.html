@@ -1,0 +1,77 @@
+<html>
+<head>
+<style>
+body {
+padding-left: 450px;
+padding-right: 450px;
+background-color: pink;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: skyblue;
+  font-size: 28px;
+  transition: 0.2s;
+
+}
+
+
+ul li:nth-child(odd) {
+  background:lightgreen;
+}
+
+
+ul li:hover {
+  background: #ddd;
+}
+
+.myDIV button {
+  background-color:#008CBA;
+  border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   margin: 4px 2px;
+   cursor: pointer;
+
+}
+
+</style>
+</head>
+<body>
+
+<div id="myDIV" class="header">
+  <h2 style="font-size:50px">My To Do List</h2>
+  <input type="text" id="myInput" placeholder="Enter here">
+  <span onclick="newElement()" >
+    <button>Add</button>
+  </span>
+</div>
+<ul id="myUL">
+
+</ul>
+<script>
+
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+
+      document.getElementById("myUL").appendChild(li);
+
+    document.getElementById("myInput").value = "";
+  }
+</script>
+
+</body>
+</html>
